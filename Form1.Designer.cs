@@ -35,7 +35,6 @@
             UpLimX = new NumericUpDown();
             DownLimX = new NumericUpDown();
             FuncText = new Label();
-            LaTEXconv = new Button();
             Xtext = new Label();
             Ytext = new Label();
             DownLimY = new NumericUpDown();
@@ -46,9 +45,10 @@
             Instruction = new Button();
             label1 = new Label();
             numericUpDown2 = new NumericUpDown();
-            label2 = new Label();
             checkBox1 = new CheckBox();
             label3 = new Label();
+            checkBox2 = new CheckBox();
+            richTextBox1 = new RichTextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)UpLimX).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DownLimX).BeginInit();
@@ -72,7 +72,7 @@
             // 
             FunctionFill.Location = new Point(105, 427);
             FunctionFill.Name = "FunctionFill";
-            FunctionFill.Size = new Size(400, 23);
+            FunctionFill.Size = new Size(557, 23);
             FunctionFill.TabIndex = 2;
             // 
             // pictureBox1
@@ -86,8 +86,9 @@
             // 
             // UpLimX
             // 
+            UpLimX.AccessibleName = "Верхний предел Х";
             UpLimX.DecimalPlaces = 2;
-            UpLimX.Location = new Point(672, 148);
+            UpLimX.Location = new Point(672, 142);
             UpLimX.Maximum = new decimal(new int[] { int.MaxValue, 0, 0, 0 });
             UpLimX.Minimum = new decimal(new int[] { int.MinValue, 0, 0, int.MinValue });
             UpLimX.Name = "UpLimX";
@@ -98,8 +99,9 @@
             // 
             // DownLimX
             // 
+            DownLimX.AccessibleName = "Нижний предел Х";
             DownLimX.DecimalPlaces = 2;
-            DownLimX.Location = new Point(672, 177);
+            DownLimX.Location = new Point(672, 171);
             DownLimX.Maximum = new decimal(new int[] { int.MaxValue, 0, 0, 0 });
             DownLimX.Minimum = new decimal(new int[] { int.MinValue, 0, 0, int.MinValue });
             DownLimX.Name = "DownLimX";
@@ -118,22 +120,10 @@
             FuncText.TabIndex = 12;
             FuncText.Text = "Функция:";
             // 
-            // LaTEXconv
-            // 
-            LaTEXconv.BackColor = SystemColors.InactiveCaption;
-            LaTEXconv.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LaTEXconv.Location = new Point(537, 427);
-            LaTEXconv.Name = "LaTEXconv";
-            LaTEXconv.Size = new Size(125, 25);
-            LaTEXconv.TabIndex = 13;
-            LaTEXconv.Text = "LaTEX конвертер";
-            LaTEXconv.UseVisualStyleBackColor = false;
-            LaTEXconv.Click += LaTEXconv_Click;
-            // 
             // Xtext
             // 
             Xtext.AutoSize = true;
-            Xtext.Location = new Point(693, 130);
+            Xtext.Location = new Point(693, 124);
             Xtext.Name = "Xtext";
             Xtext.Size = new Size(116, 15);
             Xtext.TabIndex = 14;
@@ -150,6 +140,7 @@
             // 
             // DownLimY
             // 
+            DownLimY.AccessibleName = "Нижний предел Y";
             DownLimY.DecimalPlaces = 2;
             DownLimY.Location = new Point(676, 56);
             DownLimY.Maximum = new decimal(new int[] { int.MaxValue, 0, 0, 0 });
@@ -162,6 +153,7 @@
             // 
             // UpLimY
             // 
+            UpLimY.AccessibleName = "Верхний предел Y";
             UpLimY.DecimalPlaces = 2;
             UpLimY.Location = new Point(676, 27);
             UpLimY.Maximum = new decimal(new int[] { int.MaxValue, 0, 0, 0 });
@@ -220,7 +212,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(693, 213);
+            label1.Location = new Point(693, 259);
             label1.Name = "label1";
             label1.Size = new Size(109, 15);
             label1.TabIndex = 24;
@@ -229,7 +221,8 @@
             // numericUpDown2
             // 
             numericUpDown2.DecimalPlaces = 4;
-            numericUpDown2.Location = new Point(672, 231);
+            numericUpDown2.Increment = new decimal(new int[] { 1, 0, 0, 262144 });
+            numericUpDown2.Location = new Point(672, 277);
             numericUpDown2.Maximum = new decimal(new int[] { 1024, 0, 0, 0 });
             numericUpDown2.Minimum = new decimal(new int[] { 1024, 0, 0, int.MinValue });
             numericUpDown2.Name = "numericUpDown2";
@@ -238,25 +231,14 @@
             numericUpDown2.TextAlign = HorizontalAlignment.Center;
             numericUpDown2.Value = new decimal(new int[] { 1, 0, 0, 262144 });
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 7F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(685, 257);
-            label2.Name = "label2";
-            label2.Size = new Size(124, 36);
-            label2.TabIndex = 25;
-            label2.Text = "Не ставьте слишком\r\nмаленькое значение \r\nдля быстрой компиляции";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(685, 85);
+            checkBox1.Location = new Point(668, 85);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(134, 19);
+            checkBox1.Size = new Size(168, 19);
             checkBox1.TabIndex = 26;
-            checkBox1.Text = "Автоопределение Y";
+            checkBox1.Text = "Автоопределение Y (beta)";
             checkBox1.UseVisualStyleBackColor = true;
             checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
@@ -270,15 +252,35 @@
             label3.TabIndex = 27;
             label3.Text = "Экспорт";
             // 
+            // checkBox2
+            // 
+            checkBox2.AutoSize = true;
+            checkBox2.Location = new Point(668, 200);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(168, 19);
+            checkBox2.TabIndex = 28;
+            checkBox2.Text = "Автоопределение X (beta)";
+            checkBox2.UseVisualStyleBackColor = true;
+            checkBox2.CheckedChanged += checkBox2_CheckedChanged;
+            // 
+            // richTextBox1
+            // 
+            richTextBox1.Location = new Point(668, 229);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(154, 27);
+            richTextBox1.TabIndex = 29;
+            richTextBox1.Text = "";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoValidate = AutoValidate.EnableAllowFocusChange;
             ClientSize = new Size(834, 461);
+            Controls.Add(richTextBox1);
+            Controls.Add(checkBox2);
             Controls.Add(label3);
             Controls.Add(checkBox1);
-            Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(numericUpDown2);
             Controls.Add(Instruction);
@@ -289,7 +291,6 @@
             Controls.Add(DownLimY);
             Controls.Add(UpLimY);
             Controls.Add(Xtext);
-            Controls.Add(LaTEXconv);
             Controls.Add(FuncText);
             Controls.Add(DownLimX);
             Controls.Add(UpLimX);
@@ -300,7 +301,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Построение графика функций GraphDraw v1.0 beta";
+            Text = "Построение графика функций GraphDraw v1.1 beta";
             Load += Form1_Load;
             Move += Form1_Move;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -320,7 +321,6 @@
         private NumericUpDown UpLimX;
         private NumericUpDown DownLimX;
         private Label FuncText;
-        private Button LaTEXconv;
         private Label Xtext;
         private Label Ytext;
         private NumericUpDown DownLimY;
@@ -331,8 +331,9 @@
         private Button Instruction;
         private Label label1;
         private NumericUpDown numericUpDown2;
-        private Label label2;
         private CheckBox checkBox1;
         private Label label3;
+        private CheckBox checkBox2;
+        private RichTextBox richTextBox1;
     }
 }

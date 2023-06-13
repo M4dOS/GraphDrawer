@@ -39,7 +39,7 @@ namespace GraphDrawer
             label1.AutoSize = true;
             label1.Location = new Point(9, 5);
             label1.Name = "label1";
-            label1.Size = new Size(241, 510);
+            label1.Size = new Size(241, 540);
             label1.TabIndex = 0;
             label1.Text = resources.GetString("label1.Text");
             label1.Click += label1_Click;
@@ -47,7 +47,7 @@ namespace GraphDrawer
             // newForm
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(284, 536);
+            ClientSize = new Size(284, 546);
             ControlBox = false;
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedSingle;

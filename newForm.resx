@@ -118,7 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label1.Text" xml:space="preserve">
-    <value>Базовые операции
+    <value>Возможно построение только 
+функции с одной переменной "x"
+
+Базовые операции
 "1.2" - число с "плавающей запятой"
 "x" - переменная
 "+" - сложение
@@ -136,14 +139,13 @@
 "sin(x)" - синус
 "cos(x)" - косинус
 "tg(x)" - тангенс
-"ctg(x)" - котангенс
+
+"arcctg(x)" - арк-котангенс
 "arccos(x)" - арк-косинус
 "arcsin(x)" - арк-синус
 "arctg(x)" - арк-тангенс
-"arcctg(x)" - арк-котангенс
 "log(x, n)" - логарифм x по основанию n
 "lg(x)" - десятичный логарифм x
-"ln(x)" - натуральный логарифм х
 "e(n)" - экспонента в степени n
 
 Константы
